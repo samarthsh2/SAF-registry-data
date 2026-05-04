@@ -20,10 +20,7 @@ def extract_row(data: dict) -> dict:
         "retiredAt": computed.get("retiredAt", {}).get("value"),
         "safcClaimBeneficiary": beneficiary,
         "Scope": scope,
-        "SAFMetricTonnes": computed.get("rootMetadata", {})
-        .get("product", {})
-        .get("quantityMT", {})
-        .get("value"),
+        "SAFMetricTonnes": data.get("volume", 0),
         "co2Abated": computed.get("co2Abated"),
     }
 
